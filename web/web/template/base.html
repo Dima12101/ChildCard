@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}ChildCard{% endblock %}</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" type="text/css">
+</head>
+<body>
+    <div class="jumbotron">
+        <h1 class="text-center text-dark">Сервис для создания детсткой карточки</h1>
+        <div class="container">
+          {% block content %}{% endblock %}
+        </div>
+    </div>
+    <div class="container">
+        &copy; Все права защищены 2019
+    </div>
+</body>
+</html>
