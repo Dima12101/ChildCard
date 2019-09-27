@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<p>
+    {% trans "Your account is now activated." %}
+    {% if not user.is_authenticated %}
+    {% trans "You can"%} <a href="{% url 'login'%}">log in</a>.
+    {% endif %}
+</p>
+{% endblock %}
