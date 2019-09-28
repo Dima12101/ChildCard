@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Вход в ChildCard{% endblock %}</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" type="text/css" />
+    <script src="https://use.fontawesome.com/b8cb5fa048.js"></script>
+    {% block styles %}{% endblock %}
+</head>
+<body class="jumbotron">
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+    <div class="container">
+        &copy; Все права защищены 2019
+    </div>
+</body>
+</html>
