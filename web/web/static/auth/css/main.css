@@ -19,6 +19,12 @@
     margin-right: auto;
 }
 
+.auth-block input
+{
+    font-family:Open Sans,sans-serif;
+    color:#96a2b2;
+}
+
 .auth-block h1, .login-block h6
 {
     font-family:Open Sans,sans-serif;
