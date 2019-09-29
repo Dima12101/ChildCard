@@ -9,22 +9,25 @@
     <script src="https://use.fontawesome.com/b8cb5fa048.js"></script>
     {% block styles %}{% endblock %}
     <style>
-        body
+        .jumbotron
         {
-            background-image: url({% static 'auth/image/back_image.jpg' %});
-            -moz-background-size: 100%; /* Firefox 3.6+ */
-            -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
-            -o-background-size: 100%; /* Opera 9.6+ */
-            background-size: 100%; /* Современные браузеры */
+            background: url({% static 'auth/image/back_image.jpg' %}) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
         }
     </style>
 </head>
-<body class="jumbotron">
-    <div class="container">
-        {% block content %}{% endblock %}
-    </div>
-    <div class="container footer">
+<body>
+    <section  class="jumbotron">
+        <div class="container content">
+            {% block content %}{% endblock %}
+        </div>
+    </section >
+    <section class="footer">
         &copy; Все права защищены 2019
-    </div >
+        <span><b>GitHub:</b> <a href="https://github.com/Dima12101/ChildCard">https://github.com/Dima12101/ChildCard</a></span>
+    </section >
 </body>
 </html>

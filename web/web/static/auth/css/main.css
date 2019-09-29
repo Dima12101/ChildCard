@@ -1,15 +1,32 @@
+.jumbotron
+{
+    height: 96vh;
+    margin-bottom: 0;
+}
 .footer
 {
-    position:fixed;
-    top: 95%;
-    left: 6%;
-    text-align: center;
+    height: 4vh;
+    padding-left: 2%;
+    color: #96a2b2;
+    background: #101d11;
+}
+
+.footer span
+{
+    color: #96a2b2;
+    position: relative;
+    left: 55%;
+}
+
+.footer span a
+{
+    color: #96a2b2;
 }
 
 .auth-block
 {
     background-color:#fff;
-    padding:2%;
+    padding: 1% 2%;
     -webkit-box-shadow:0 3px 50px 0 rgb(255,255,255);
     box-shadow:0 3px 50px 0 rgb(255,255,255);
     text-align:center;
@@ -43,23 +60,29 @@
 {
     font-size:22px;
     margin-bottom:20px;
-    margin-top:10px
+    margin-top:2px
 }
 .auth-block .input-group-addon
 {
     color:#29aafe;
     font-size:19px;
-    padding:2%;
+    padding:1% 2%;
     opacity:.5
 }
+
+.fa
+{
+    width: 19px;
+}
+
 .auth-block .btn-block
 {
-    margin: 20px auto;
     width: 60%;
     height: 2%;
-    padding:15px;
+    padding:10px;
     background:#29aafe;
     border-color:#29aafe;
+    margin: 5px auto;
 }
 .auth-block .btn-block:active, .auth-block .btn-block:focus, .auth-block .btn-block:hover
 {
@@ -75,9 +98,10 @@
 
 .errorlist li
 {
-    margin: 2px;
-    padding: 2px;
+    margin: 1px;
+    padding: 1px;
     font-style: italic;
+    font-size: small;
     color: #ff857e;
 }
 
@@ -91,4 +115,15 @@
     content: "\f06a";  /* юникод точки */
     color: #ff4e2a; /* Менять цвет */
     margin-right: 5px;
+}
+
+
+.success-result h1
+{
+    color: #70b370;
+}
+
+.error-block h1
+{
+    color: #b37e68;
 }

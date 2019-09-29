@@ -1,7 +1,17 @@
 {% extends "base_auth.html" %}
-{% load i18n %}
-{% block title %}{% trans "Activation Failure" %}{% endblock %}
+{% block title %}Ошибка активации{% endblock %}
 
 {% block content %}
-<p>{% trans "Account activation failed." %}</p>
+    <div class="auth-block error-block">
+            <h1>Ошибка активации аккаунта</h1>
+            <p>
+                Ссылка на активацию аккаунта не валидна.
+                <br />
+                Скорей всего она была уже использована.
+            </p>
+            <p>
+                По всем вопросам обращаться по следующему адресу:
+                <a href="mailto:child-card@mail.ru" target="display"> child-card@mail.ru </a>
+            </p>
+    </div>
 {% endblock %}
