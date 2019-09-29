@@ -1,0 +1,88 @@
+.footer
+{
+    position:fixed;
+    top: 95%;
+    left: 6%;
+    text-align: center;
+}
+
+.auth-block
+{
+    background-color:#fff;
+    padding:2%;
+    -webkit-box-shadow:0 3px 50px 0 rgb(255,255,255);
+    box-shadow:0 3px 50px 0 rgb(255,255,255);
+    text-align:center;
+    border-radius:5px;
+    max-width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.auth-block h1, .login-block h6
+{
+    font-family:Open Sans,sans-serif;
+    color:#96a2b2;
+    letter-spacing:1px;
+}
+
+.auth-block p
+{
+    font-family:Open Sans,sans-serif;
+    color: #96a2b2;
+    letter-spacing:1px
+}
+
+.auth-block h1
+{
+    font-size:22px;
+    margin-bottom:20px;
+    margin-top:10px
+}
+.auth-block .input-group-addon
+{
+    color:#29aafe;
+    font-size:19px;
+    padding:2%;
+    opacity:.5
+}
+.auth-block .btn-block
+{
+    margin: 20px auto;
+    width: 60%;
+    height: 2%;
+    padding:15px;
+    background:#29aafe;
+    border-color:#29aafe;
+}
+.auth-block .btn-block:active, .auth-block .btn-block:focus, .auth-block .btn-block:hover
+{
+    color:#fff;
+    background-color: #25c4fe
+}
+
+.errorlist
+{
+    list-style-type: none;
+    text-align:left;
+}
+
+.errorlist li
+{
+    margin: 2px;
+    padding: 2px;
+    font-style: italic;
+    color: #ff857e;
+}
+
+.errorlist li::before {
+    display:inline-block;
+    font:normal normal normal 14px/1 FontAwesome;
+    font-size:inherit;
+    text-rendering:auto;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    content: "\f06a";  /* юникод точки */
+    color: #ff4e2a; /* Менять цвет */
+    margin-right: 5px;
+}
