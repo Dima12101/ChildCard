@@ -1,11 +1,5 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <p>Контент главной страницы</p>
-    {% if user.is_authenticated %}
-         <p>Пользователь: {{ user.get_username }}</p>
-         <p><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></p>
-    {% else %}
-         <p><a href="{% url 'login'%}?next={{request.path}}">Login</a></p>
-    {% endif %}
+
 {% endblock %}

@@ -1,0 +1,41 @@
+.menu-main {
+  list-style: none;
+  padding: 0;
+}
+.menu-main li {display: inline-block;}
+.menu-main li:after {
+  content: "|";
+  color: #fff;
+  display: inline-block;
+  vertical-align:top;
+}
+.menu-main li:last-child:after {content: none;}
+.menu-main a {
+  text-decoration: none;
+  font-family: Open Sans,sans-serif;
+  letter-spacing: 1px;
+  position: relative;
+  margin: 0 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: color .2s;
+}
+.menu-main a, .menu-main a:visited {color: #62c8fb;}
+.menu-main a.current, .menu-main a:hover{color: #fff;}
+
+.menu-main a:before,
+.menu-main a:after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  top: auto;
+  right: 50%;
+  bottom: -5px;
+  left: 50%;
+  background: #fff;
+  transition: .8s;
+}
+
+.menu-main a:hover:before, .menu-main .current:before {left: 0;}
+.menu-main a:hover:after, .menu-main .current:after {right: 0;}

@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
-    'bootstrapform',
     'django_registration',
 ]
 
@@ -150,3 +149,4 @@ EMAIL_HOST_PASSWORD = 'Flvby66!'
 EMAIL_USE_TLS = True
 SERVER_EMAIL = EMAIL_HOST_USER
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
