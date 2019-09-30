@@ -23,7 +23,7 @@ pypiwin32==223
 python-dateutil==2.8.0
 pytz==2019.2
 pywin32==225
-PyYAML==3.13
+PyYAML==5.1
 query-string==2019.4.13
 requests==2.22.0
 semantic-version==2.5.0
