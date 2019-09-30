@@ -30,7 +30,7 @@ SECRET_KEY = '%dm9ce$!m8w$4a!y*hn$qmnji2b9+%4bey^i&4$1t$(4mrud6f'
 DEBUG = True
 
 #ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['ChildCard-dev.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['ChildCard-dev.us-east-1.elasticbeanstalk.com', '*']
 
 
 # Application definition
