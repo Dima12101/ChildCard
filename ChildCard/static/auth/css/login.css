@@ -1,0 +1,47 @@
+#title_site
+{
+    font-style: italic;
+    color: #29aafe;
+}
+
+.social-icons
+{
+    list-style-type: none;
+    text-align:center;
+    padding: 0;
+    margin-bottom: 5px;
+}
+.social-icons li
+{
+    display: inline; /* Отображать как строчный элемент */
+    margin: 5px; /* Отступ слева */
+    padding: 10px;
+}
+
+.social-icons .fa
+{
+    margin-top: 10px;
+    font-size: 25px;
+}
+
+.social-icons a.facebook:hover
+{
+    color: #1fe0fe
+}
+.social-icons a.twitter:hover
+{
+    color: #28cffe
+}
+.social-icons a.vk:hover
+{
+    color: #27b1fe
+}
+
+.login-links a
+{
+    color: #178afe;
+}
+.login-links p
+{
+    margin: 2px;
+}

@@ -1,0 +1,31 @@
+.jumbotron
+{
+    padding-top: 5px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.auth-block
+{
+    max-width: 80%;
+    max-height: 50%;
+    padding-bottom: 5px;
+}
+.form-text
+{
+    margin-left: 55px;
+    text-align: left;
+}
+.form-text > ul
+{
+    padding-left: 25px;
+}
+
+.input-group
+{
+    height: 40px;
+}
+
+
+
+
