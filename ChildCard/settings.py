@@ -37,14 +37,15 @@ ALLOWED_HOSTS = ['ChildCard-dev.us-east-1.elasticbeanstalk.com', '*']
 
 INSTALLED_APPS = [
     'main.apps.MainConfig',
+    'accounts.apps.AccountsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'crispy_forms',
     'django_registration',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -154,3 +155,9 @@ EMAIL_HOST_PASSWORD = 'Flvby66!'
 EMAIL_USE_TLS = True
 SERVER_EMAIL = EMAIL_HOST_USER
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+
+ADMINS = (
+    ('Dmitry Tereschenko', 'dima123-99@mail.ru'),
+)
+MANAGERS = ADMINS

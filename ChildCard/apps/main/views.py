@@ -16,3 +16,5 @@ def info(request):
 @login_required
 def contact(request):
     return render(request, 'main/contact.html')
+
+
