@@ -4,9 +4,6 @@ from django.urls import path, include
 from .forms import EmailValidationOnForgotPassword
 from .forms import EmailValidationOnRegister
 
-#from django_registration.backends.activation.views import
-
-
 urlpatterns = [
     path('register/', RegistrationView.as_view(form_class=EmailValidationOnRegister),
          name='form_valid'), # Addition check email
