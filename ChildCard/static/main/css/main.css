@@ -37,16 +37,23 @@
     box-shadow:0 2px 10px 8px #62c8fb;
     float: left;
     background: #62c8fb;
+    transition: all 0.5s;
 }
 #logo:hover
 {
+    background: #fff;
     box-shadow:0 2px 10px 8px #fff;
 }
+#logo:hover a, #logo:hover a:visited
+{
+    color: #62c8fb;
+}
+
 #logo a
 {
     text-decoration: none;
     font-family:Open Sans,sans-serif;
     font-size: 25px;
-    color:#fff;
+    transition: all 0.5s;
 }
 #logo a, #logo a:visited {color: #fff;}

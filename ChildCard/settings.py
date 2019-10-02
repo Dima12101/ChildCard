@@ -45,8 +45,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_registration',
+    'social_django',
     'crispy_forms',
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -141,7 +147,11 @@ STATICFILES_DIRS = [
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+
+LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = '/'
+LOGOUT_URL = 'logout'
+LOGOUT_REDIRECT_URL = 'login'
 
 ACCOUNT_ACTIVATION_DAYS = 7  # One-week activation window
 
@@ -161,3 +171,9 @@ ADMINS = (
     ('Dmitry Tereschenko', 'dima123-99@mail.ru'),
 )
 MANAGERS = ADMINS
+
+
+SOCIAL_AUTH_FACEBOOK_KEY = '463560134371758'        # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = '6937a8f6279507b95ee4f5ec4bde6c03'  # App Secret
+
+# FACEBOOK_EXTENDED_PERMISSIONS = ['email']
