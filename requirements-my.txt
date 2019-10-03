@@ -20,6 +20,7 @@ Django==2.2.5
 django-crispy-forms==1.7.2
 django-registration==3.0.1
 docutils==0.15.2
+ecdsa==0.13.2
 future==0.16.0
 get==2019.4.13
 httplib2==0.14.0
@@ -35,13 +36,16 @@ pathspec==0.5.9
 post==2019.4.13
 psycopg2==2.8.3
 public==2019.4.13
+pyasn1==0.4.7
 pycparser==2.19
 PyJWT==1.7.1
 pyOpenSSL==19.0.0
 pypiwin32==223
 pyRFC3339==1.1
 python-dateutil==2.8.0
+python-jose==3.0.1
 python-openid==2.2.5
+python-social-auth==0.3.6
 python3-openid==3.1.0
 pytz==2019.2
 pywin32==225
@@ -50,6 +54,7 @@ query-string==2019.4.13
 requests==2.22.0
 requests-oauthlib==1.2.0
 requests-toolbelt==0.9.1
+rsa==4.0
 semantic-version==2.5.0
 six==1.11.0
 social-auth-app-django==3.1.0

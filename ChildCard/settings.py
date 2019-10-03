@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os, sys
 from django.core.mail import send_mail
+from .local_setting import *
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,15 +24,11 @@ sys.path.insert(0, os.path.join(PROJECT_ROOT, 'apps'))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '%dm9ce$!m8w$4a!y*hn$qmnji2b9+%4bey^i&4$1t$(4mrud6f'
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['ChildCard-dev.us-east-1.elasticbeanstalk.com', '*']
-
 
 # Application definition
 
@@ -44,13 +41,22 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'django_registration',
-    'social_django',
     'crispy_forms',
+    'social.apps.django_app.default',
+    'social_django',
 ]
 
+SITE_ID = 1
+
 AUTHENTICATION_BACKENDS = (
-    'social_core.backends.facebook.FacebookOAuth2',
+    'social.backends.facebook.FacebookOAuth2',
+    'social.backends.google.GoogleOAuth2',
+    'social.backends.twitter.TwitterOAuth',
+    'social_core.backends.vk.VKOAuth2',
+    'social_core.backends.instagram.InstagramOAuth2',
+    'social_core.backends.yandex.YandexOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
 
@@ -62,6 +68,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'ChildCard.urls'
@@ -79,6 +86,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                'social.apps.django_app.context_processors.backends',
+                'social.apps.django_app.context_processors.login_redirect',
             ],
         },
     },
@@ -86,20 +96,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ChildCard.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ChildCard',
-        'USER': 'postgres',
-        'PASSWORD': 'Flvby66!',
-        'HOST': 'aws-rds-postgresql.cfxoin7bynly.us-east-1.rds.amazonaws.com',
-        'PORT': '5432',
-    }
-}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -119,7 +115,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
@@ -133,13 +128,12 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
 
-#STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+# STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
 STATICFILES_DIRS = [
     os.path.join(PROJECT_ROOT, 'static'),
@@ -147,33 +141,36 @@ STATICFILES_DIRS = [
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_URL = 'logout'
 LOGOUT_REDIRECT_URL = 'login'
+LOGIN_ERROR_URL = 'login'
 
 ACCOUNT_ACTIVATION_DAYS = 7  # One-week activation window
-
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 AUTH_USER_EMAIL_UNIQUE = True
 EMAIL_HOST = 'smtp.mail.ru'
 EMAIL_PORT = 2525
-EMAIL_HOST_USER = 'child-card@mail.ru'
-EMAIL_HOST_PASSWORD = 'Flvby66!'
 EMAIL_USE_TLS = True
-SERVER_EMAIL = EMAIL_HOST_USER
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
-ADMINS = (
-    ('Dmitry Tereschenko', 'dima123-99@mail.ru'),
+SOCIAL_AUTH_PIPELINE = (
+    'social_core.pipeline.social_auth.social_details',
+    'social_core.pipeline.social_auth.social_uid',
+    'social_core.pipeline.social_auth.auth_allowed',
+    'social_core.pipeline.social_auth.social_user',
+    'common.pipeline.require_email',
+    'common.pipeline.require_country',
+    'common.pipeline.require_city',
+    'social_core.pipeline.user.get_username',
+    'social_core.pipeline.mail.mail_validation',
+    'social_core.pipeline.user.create_user',
+    'social_core.pipeline.social_auth.associate_user',
+    'social_core.pipeline.debug.debug',
+    'social_core.pipeline.social_auth.load_extra_data',
+    'social_core.pipeline.user.user_details',
+    'social_core.pipeline.debug.debug'
 )
-MANAGERS = ADMINS
-
-
-SOCIAL_AUTH_FACEBOOK_KEY = '463560134371758'        # App ID
-SOCIAL_AUTH_FACEBOOK_SECRET = '6937a8f6279507b95ee4f5ec4bde6c03'  # App Secret
-
-# FACEBOOK_EXTENDED_PERMISSIONS = ['email']

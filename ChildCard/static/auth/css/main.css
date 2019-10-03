@@ -4,7 +4,7 @@
 @-o-keyframes      fade-in {   0% { opacity: 0.1; }   100% { opacity: 1; }   }
 @keyframes         fade-in {   0% { opacity: 0.1; }   100% { opacity: 1; }   }
 
-.auth-block {
+.auth-block, .login-links {
   -webkit-animation: fade-in 1s linear; /* Safari 4+ */
   -moz-animation: fade-in 1s linear; /* Fx 5+ */
   -o-animation: fade-in 1s linear; /* Opera 12+ */

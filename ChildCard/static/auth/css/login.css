@@ -28,11 +28,20 @@
 {
     color: #1fe0fe
 }
-.social-icons a.twitter:hover
+.social-icons a.instagram:hover
 {
     color: #28cffe
 }
 .social-icons a.vk:hover
+{
+    color: #27b1fe
+}
+
+.social-icons a.google:hover
+{
+    color: #27b1fe
+}
+.social-icons a.yandex:hover
 {
     color: #27b1fe
 }
