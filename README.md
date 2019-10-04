@@ -1,5 +1,5 @@
 # ChildCard
-## *Web-service for create cards of your children.*
+*Web-service for create cards of your children.*
 
 **Problem**: A lot of parents are watching the development and condition of your children. They are fixing the different information about them. And the three questions are appeared:
   1. How the information should be stored?
