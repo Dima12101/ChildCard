@@ -10,9 +10,9 @@
 **This decision**: Web-service, which give the follow functional:
   1. Registration and authorization.
   2. Creation the card of child, where you can put the different information at certain times about your child.
-      -Height, weight, circle of head and body;
-      -Image;
-      -Diseases, vaccinations and so on.
+      * Height, weight, circle of head and body;
+      * Image;
+      * Diseases, vaccinations and so on.
   3. Watching the information about the current condition of your children and the all other that you put. 
 
 
