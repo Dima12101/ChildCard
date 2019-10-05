@@ -11,13 +11,21 @@
     <link rel="stylesheet" href="{% static 'auth/css/main.css' %}" type="text/css">
     {% block styles %}{% endblock %}
     <style>
-        .jumbotron
-        {
-            background: url({% static 'auth/image/back_image.jpg' %}) no-repeat center center fixed;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
+        @media (min-width: 1100px) {
+            .jumbotron
+            {
+                background: url({% static 'auth/image/back_image.jpg' %}) no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+        }
+        @media (max-width: 1100px) {
+            .jumbotron
+            {
+                background: linear-gradient(10deg, #aceeeb, #f6ffff);
+            }
         }
     </style>
 </head>
