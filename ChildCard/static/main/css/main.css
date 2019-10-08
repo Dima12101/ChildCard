@@ -2,27 +2,38 @@
 {
     height: 25px;
     background: #24727b;
+    position: relative;
+    z-index: 1;
 }
 
 .jumbotron
 {
-    height: 92vh;
-    margin-bottom: 0;
+    height: 96vh;
+    position: relative;
+    z-index: 0;
 }
 
 .footer
 {
     height: 4vh;
-    padding-left: 1%;
+    width: 100%;
+    padding-left: 2%;
     color: #96a2b2;
     background: #101d11;
+    font-size: 2.5vh;
+
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
 }
+
 .footer span
 {
     color: #96a2b2;
-    position: relative;
-    left: 55%;
+    position: fixed;
+    right: 2%;
 }
+
 .footer span a
 {
     color: #96a2b2;
@@ -57,3 +68,40 @@
     transition: all 0.5s;
 }
 #logo a, #logo a:visited {color: #fff;}
+
+
+@media (max-width: 1100px) {
+    .jumbotron
+    {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+    }
+
+    .footer
+    {
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+
+    }
+
+
+    .footer span
+    {
+        color: #96a2b2;
+        display: none;
+    }
+
+    #logo
+    {
+        box-shadow:0 2px 10px 8px #ace6ee;
+        background: #ace6ee;
+    }
+    #logo:hover a, #logo:hover a:visited
+    {
+        color: #ace6ee;
+    }
+
+}

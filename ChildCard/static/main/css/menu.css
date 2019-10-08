@@ -39,3 +39,9 @@
 
 .menu-main a:hover:before, .menu-main .current:before {left: 0;}
 .menu-main a:hover:after, .menu-main .current:after {right: 0;}
+
+
+@media (max-width: 1100px) {
+    .menu-main a, .menu-main a:visited {color: #ace6ee;}
+    .menu-main a.current, .menu-main a:hover{color: #fff;}
+}

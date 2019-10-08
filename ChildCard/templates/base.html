@@ -14,14 +14,22 @@
     <link rel="stylesheet" href="{% static 'main/css/accountMenu.css' %}" type="text/css">
     {% block styles %}{% endblock %}
     <style>
-        .jumbotron
-        {
-            background: url({% static 'main/image/back_image1.jpg' %}) no-repeat center center fixed;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-         }
+        @media (min-width: 1100px) {
+            .jumbotron
+            {
+                background: url({% static 'main/image/back_image1.jpg' %}) no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+        }
+        @media (max-width: 1100px) {
+            .jumbotron
+            {
+                background: linear-gradient(to bottom, #ace6ee, #6fdf50);
+            }
+        }
     </style>
 </head>
 <body>
@@ -30,7 +38,7 @@
         <span id="menu">
             <ul class="menu-main">
                   <li><a id="li_main" href="{% url 'main:index' %}" class="current">Главная</a></li>
-                  <li><a id="li_info" href="{% url 'main:info' %}">Инфо</a></li>
+                  <li><a id="li_info" href="{% url 'main:info' %}">О НАС</a></li>
                   <li><a id="li_contact" href="{% url 'main:contact' %}">Контакты</a></li>
             </ul>
         </span>
