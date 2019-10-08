@@ -9,6 +9,7 @@
 .jumbotron
 {
     height: 96vh;
+    margin-bottom: 0;
     position: relative;
     z-index: 0;
 }
