@@ -1,43 +1,40 @@
 {% extends 'base.html' %}
-
+{% load staticfiles %}
 {% block content %}
-    <div class="container cards">
+    <div class="container cards w-50">
         <div class="row">
             <div class="col text-center text-uppercase">
                 <div class="title">
-                    <h4>Карточки</h4>
+                    <h4><span>Карточки</span></h4>
                 </div>
             </div>
         </div>
-        <div id="carousel-cards" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators" style="position: absolute; transform: translateY(100px)">
+        <div id="carousel" class="carousel slide mw-100" data-ride="carousel">
+          <!-- Индикаторы -->
+            <ol class="carousel-indicators">
                 {% for i in indexs %}
-                    <li data-target="#carousel-cards" data-slide-to="{{i}}" class="indicators"></li>
+                    <li data-target="#carousel" data-slide-to="{{i}}" class="indicators"></li>
                 {% endfor %}
             </ol>
             <div class="carousel-inner">
                 {% for card_data in  cards_data%}
                     <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="col-md-3 col-sm-9 col-9">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ card_data.child_name }}</h5>
-                                        <p class="card-text">Контент</p>
-                                    </div>
-                                </div>
-                            </div>
+                        {#                        {{ STATIC_URL }}main/image/photo_childs/{{ card_data.child_name }}.jpg#}
+                        <a href="#"><img class="img-fluid photo" src="{% static 'main/image/photo_childs/Лера.jpg' %}" alt="photo"></a>
+                        <div class="carousel-caption">
+                            <h3>{{card_data.child_name}}</h3>
                         </div>
                     </div>
                 {% endfor %}
             </div>
-            <a class="carousel-control-prev" href="#carousel-cards" data-slide="prev">
+          <!-- Элементы управления -->
+            <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
+                <span class="sr-only">Предыдущий</span>
             </a>
-            <a class="carousel-control-next" href="#carousel-cards" data-slide="next">
+            <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
+                <span class="sr-only">Следующий</span>
             </a>
         </div>
     </div>

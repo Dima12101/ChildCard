@@ -12,7 +12,7 @@ def index(request):
     # card.save()
     cards_data = Card.objects.all()
     indexs = range(len(cards_data))
-    return render(request, 'main/index.html', {'cards_data' : cards_data, 'indexs': indexs})
+    return render(request, 'main/index.html', {'cards_data': cards_data, 'indexs': indexs})
 
 
 @login_required

@@ -71,16 +71,50 @@
 #logo a, #logo a:visited {color: #fff;}
 
 
-.cards
+
+.title h4{text-align:center;overflow:hidden;display:block;white-space:nowrap;color:#24727b}
+.title h4>span{position:relative;display:inline-block;}
+
+.title h4>span:before,
+.title h4>span:after{content:"";position:absolute;top:50%;width:140%;height:10px;background:#24727b;border-radius:5px;}
+
+.title h4>span:before{right:100%;margin-right:25px;}
+.title h4>span:after{left:100%;margin-left:25px;}
+
+#carousel
 {
-    padding-bottom: 3em;
+    margin-top: 4%;
+    -webkit-box-shadow:0 20px 50px 50px white;
+    box-shadow:0 20px 50px 50px white;
+    border-radius:5px;
 }
+
+.photo
+{
+    border-radius:5px;
+}
+
+.carousel-caption
+{
+
+
+}
+
+
 
 .cards .card h5
 {
     font-size: 1em;
     color: #1c7430;
 }
+
+/*#carousel-cards*/
+/*{*/
+/*    height: 10vh;*/
+/*    width: 10vh;*/
+/*}*/
+
+
 
 @media (max-width: 1100px) {
     .jumbotron
