@@ -19,8 +19,7 @@
             <div class="carousel-inner">
                 {% for card_data in  cards_data%}
                     <div class="carousel-item">
-                        {#                        {{ STATIC_URL }}main/image/photo_childs/{{ card_data.child_name }}.jpg#}
-                        <a href="#"><img class="img-fluid photo" src="{% static 'main/image/photo_childs/Лера.jpg' %}" alt="photo"></a>
+                        <a href="#"><img class="img-fluid photo" src="{% static card_data.path_child_photo %}" alt="photo"></a>
                         <div class="carousel-caption">
                             <h3>{{card_data.child_name}}</h3>
                         </div>
