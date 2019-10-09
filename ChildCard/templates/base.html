@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}ChildCard{% endblock %}</title>
+    {% load staticfiles %}
+
     <script src="https://use.fontawesome.com/b8cb5fa048.js"></script>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-    {% load staticfiles %}
+    <script src="{% static 'download/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'download/js/jquery-3.4.1.min.js' %}"></script>
+
     <link rel="shortcut icon" type="image/png" href="{% static "favicon.ico" %}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="{% static 'download/css/bootstrap.min.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'main/css/menu.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'main/css/accountMenu.css' %}" type="text/css">
@@ -33,6 +37,7 @@
     </style>
 </head>
 <body>
+    
     <section class="header">
         <span id="logo"><a href="{% url 'main:index' %}">ChildCard</a></span>
         <span id="menu">

@@ -33,7 +33,7 @@ ALLOWED_HOSTS = ['ChildCard-dev.us-east-1.elasticbeanstalk.com', '*']
 # Application definition
 
 INSTALLED_APPS = [
-    'main.apps.MainConfig',
+    'main',
     'accounts.apps.AccountsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+
     'django_registration',
     'crispy_forms',
     'social.apps.django_app.default',
@@ -138,6 +139,11 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(PROJECT_ROOT, 'static'),
 ]
+
+STATICFILES_FINDERS = (
+     "django.contrib.staticfiles.finders.FileSystemFinder",
+     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+)
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

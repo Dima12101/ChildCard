@@ -1,5 +1,50 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <div class="container cards">
+        <div class="row">
+            <div class="col text-center text-uppercase">
+                <div class="title">
+                    <h4>Карточки</h4>
+                </div>
+            </div>
+        </div>
+        <div id="carousel-cards" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators" style="position: absolute; transform: translateY(100px)">
+                {% for i in indexs %}
+                    <li data-target="#carousel-cards" data-slide-to="{{i}}" class="indicators"></li>
+                {% endfor %}
+            </ol>
+            <div class="carousel-inner">
+                {% for card_data in  cards_data%}
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-md-3 col-sm-9 col-9">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ card_data.child_name }}</h5>
+                                        <p class="card-text">Контент</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <a class="carousel-control-prev" href="#carousel-cards" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel-cards" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        $(".carousel-item:first-of-type").addClass("active");
+        $(".indicators:first-of-type").addClass("active");
+    </script>
 
 {% endblock %}

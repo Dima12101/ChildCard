@@ -71,6 +71,17 @@
 #logo a, #logo a:visited {color: #fff;}
 
 
+.cards
+{
+    padding-bottom: 3em;
+}
+
+.cards .card h5
+{
+    font-size: 1em;
+    color: #1c7430;
+}
+
 @media (max-width: 1100px) {
     .jumbotron
     {
