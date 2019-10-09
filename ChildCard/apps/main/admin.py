@@ -7,6 +7,7 @@ class CardAdmin(admin.ModelAdmin):
 
     list_filter = ['creator_id', 'date']
     search_fields = ['child_name']
+    exclude = ['path_child_photo']
 
     class Meta:
         model = Card
