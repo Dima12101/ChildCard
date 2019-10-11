@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block content %}
-    <div class="container cards w-50">
+    <div class="container cards">
         <div class="row">
             <div class="col text-center text-uppercase">
                 <div class="title">
@@ -10,12 +10,6 @@
             </div>
         </div>
         <div id="carousel" class="carousel slide mw-100" data-ride="carousel">
-          <!-- Индикаторы -->
-            <ol class="carousel-indicators">
-                {% for i in indexs %}
-                    <li data-target="#carousel" data-slide-to="{{i}}" class="indicators"></li>
-                {% endfor %}
-            </ol>
             <div class="carousel-inner">
                 {% for card_data in  cards_data%}
                     <div class="carousel-item">
@@ -27,14 +21,21 @@
                 {% endfor %}
             </div>
           <!-- Элементы управления -->
-            <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+            <a class="fa fa-arrow-circle-left carousel-control-prev" href="#carousel" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Предыдущий</span>
             </a>
-            <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+            <a class="fa fa-arrow-circle-right carousel-control-next" href="#carousel" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Следующий</span>
             </a>
+
+          <!-- Индикаторы -->
+            <ol class="carousel-indicators">
+                {% for i in indexs %}
+                    <li data-target="#carousel" data-slide-to="{{i}}" class="indicators"></li>
+                {% endfor %}
+            </ol>
         </div>
     </div>
 
