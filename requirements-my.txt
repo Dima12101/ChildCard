@@ -20,7 +20,7 @@ Django==2.2.5
 django-crispy-forms==1.7.2
 django-registration==3.0.1
 docutils==0.15.2
-ecdsa==0.13.2
+ecdsa==0.13.3
 future==0.16.0
 get==2019.4.13
 httplib2==0.14.0
