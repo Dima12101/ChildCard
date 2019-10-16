@@ -21,18 +21,18 @@
                             </div>
                         </div>
                     {% endfor %}
+                    {% if cards_data.count != 1 %}
+                        <!-- Элементы управления -->
+                        <a class="fa fa-arrow-circle-left carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Предыдущий</span>
+                        </a>
+                        <a class="fa fa-arrow-circle-right carousel-control-next" href="#carousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Следующий</span>
+                        </a>
+                    {% endif %}
                 </div>
-                {% if cards_data.count != 1 %}
-                    <!-- Элементы управления -->
-                    <a class="fa fa-arrow-circle-left carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Предыдущий</span>
-                    </a>
-                    <a class="fa fa-arrow-circle-right carousel-control-next" href="#carousel" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Следующий</span>
-                    </a>
-                {% endif %}
                 <!-- Индикаторы -->
                 <ol class="carousel-indicators">
                     {% for i in indexes %}
