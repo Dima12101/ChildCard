@@ -107,6 +107,3 @@ venv.bak/
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
-
-# static files
-ChildCard/static
