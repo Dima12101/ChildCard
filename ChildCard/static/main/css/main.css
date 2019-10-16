@@ -1,3 +1,16 @@
+/*плавная загрузка страниц*/
+@-webkit-keyframes fade-in {   0% { opacity: 0.1; }   100% { opacity: 1; }   }
+@-moz-keyframes    fade-in {   0% { opacity: 0.1; }   100% { opacity: 1; }   }
+@-o-keyframes      fade-in {   0% { opacity: 0.1; }   100% { opacity: 1; }   }
+@keyframes         fade-in {   0% { opacity: 0.1; }   100% { opacity: 1; }   }
+
+.carousel, .create-block {
+  -webkit-animation: fade-in 1s linear; /* Safari 4+ */
+  -moz-animation: fade-in 1s linear; /* Fx 5+ */
+  -o-animation: fade-in 1s linear; /* Opera 12+ */
+  animation: fade-in 1s linear; /* IE 10+, Fx 29+ */
+}
+
 .header
 {
     height: 25px;
@@ -91,15 +104,6 @@
     transition: 0.4s;
 }
 
-/*#carousel:hover*/
-/*{*/
-/*    margin-top: 6%;*/
-/*    -webkit-box-shadow:0 20px 100px 50px #24727b;*/
-/*    box-shadow:0 20px 100px 50px #24727b;*/
-/*    border-radius:5px;*/
-/*    background-color: white;*/
-/*}*/
-
 .carousel-caption {padding-bottom: 0;}
 
 .carousel-caption h3 {color: white; text-shadow: 2px 2px 10px #24727b}
@@ -113,9 +117,6 @@ ol.carousel-indicators
 .carousel-indicators li {background-color: #24727b;}
 
 
-.photo {margin-top: 3%;}
-
-
 .carousel-control-next-icon, .carousel-control-prev-icon
 {
     background: transparent;
@@ -126,6 +127,24 @@ ol.carousel-indicators
 {
     font-size: 40px;
     color: #24727b;
+}
+
+#add_card
+{
+    text-decoration: none;
+    float: right;
+    margin-right: 1%;
+}
+
+#add_card .fa-plus-circle
+{
+    font-size: 30px;
+    transition: 0.5s;
+}
+
+#add_card .fa-plus-circle:hover
+{
+    color: #32a2ab;
 }
 
 .fa-arrow-circle-left:before, .fa-arrow-circle-right:before
@@ -142,8 +161,6 @@ ol.carousel-indicators
 .carousel-control-next:hover , .carousel-control-prev:hover {opacity: 1;}
 
 
-
-
 .cards .card h5
 {
     font-size: 1em;
@@ -155,11 +172,45 @@ ol.carousel-indicators
     width: 75%!important;
 }
 
+#bth-create-card
+{
+    border-radius: 40%;
+    padding: 1%;
+    background:  linear-gradient(20deg, #24565f, #236972, #237a83, #27939c);
+    text-align: center;
+    width: 300px;
+    height: 200px;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.8;
+
+    -webkit-box-shadow:0 0 20px 20px #aaf5ff;
+    box-shadow:0 0 20px 20px #aaf5ff;
+    transition: 0.4s;
+}
+
+#bth-create-card:hover
+{
+    -webkit-box-shadow:0 0 30px 40px white;
+    box-shadow:0 0 30px 40px white;
+    opacity: 1;
+}
+
+
+#bth-create-card a
+{
+    text-decoration: none;
+    display: block;
+    color: white;
+    font-size: 60px;
+    position: relative;
+    margin-top: 15%;
+}
+
 @media (max-width: 1400px) {
     .title h4>span:before,
     .title h4>span:after{width:140%;}
-
-    .photo {margin-top: 4%;}
 
     .cards
     {

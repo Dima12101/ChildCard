@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'main/css/create_card.css' %}" type="text/css">
+{% endblock %}
+{% block content %}
+    <div class="create-block">
+    <h1>Создание карточки</h1>
+    <form method="post" action="{% url 'main:create_card_complete' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group" id="div_id_childname">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-child"></i></span>
+                <input id="id_childname" required name="childname" type="text" class="form-control" placeholder="Имя ребёнка">
+            </div>
+        </div>
+        <div class="form-group" id="div_id_photo">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-file-image-o"></i></span>
+                <input id="id_photo" required name="photo" type="file" class="form-control" accept="image/*">
+            </div>
+        </div>
+        <div>
+        <img id="photo-preview" src="{% static 'main/image/default_image.jpg' %}" />
+            <br />
+            <a href="#" id="reset-photo-preview">удалить изображения</a>
+        </div>
+
+        {% if form.errors %}
+            {{ form.childname.errors }}
+            {{ form.photo.errors }}
+            {{ form.non_field_errors  }}
+        {% endif %}
+
+        <input type="hidden" name="next" value="{% url 'main:index' %}">
+        <button class="btn btn-primary btn-block" type="submit">СОЗДАТЬ</button>
+    </form>
+</div>
+
+<script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script>
+    $('#id_photo').change(function () {
+        var input = $(this)[0];
+        if (input.files && input.files[0]) {
+            if (input.files[0].type.match('image.*')) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#photo-preview').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                console.log('ошибка, не изображение');
+            }
+        } else {
+            console.log('хьюстон у нас проблема');
+        }
+    });
+
+    $('#reset-photo-preview').click(function() {
+        $('#id_photo').val('');
+        $('#photo-preview').attr('src', '{% static 'main/image/default_image.jpg' %}');
+    });
+</script>
+
+<style>
+#photo-preview{
+    width: 300px;
+    height: 200px;
+}
+
+#reset-photo-preview, #reset-photo-preview:active {
+    text-decoration: none;
+    color: #24727b;
+}
+#reset-photo-preview:focus, #reset-photo-preview:hover{
+    color: #2c959e;
+}
+</style>
+{% endblock %}

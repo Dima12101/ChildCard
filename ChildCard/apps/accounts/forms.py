@@ -13,9 +13,13 @@ class EmailValidationOnForgotPassword(PasswordResetForm):
 
     def clean_email(self):
         email = self.cleaned_data['email']
-        if not User.objects.filter(email__iexact=email, is_active=True).exists():
+        if not User.objects.filter(email__iexact=email).exists():
             msg = "Данный адрес электронной почты не зарегистрирован."
             self.add_error('email', msg)
+        elif not User.objects.filter(email__iexact=email, is_active=True).exists():
+            msg = "Данный адрес электронной почты не активирован."
+            self.add_error('email', msg)
+
         return email
 
 

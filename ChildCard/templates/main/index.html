@@ -9,34 +9,42 @@
                 </div>
             </div>
         </div>
-        <div id="carousel" class="carousel slide mw-100" data-ride="carousel">
-            <div class="carousel-inner">
-                {% for card_data in  cards_data%}
-                    <div class="carousel-item">
-                        <a href="#"><img class="img-fluid photo" src="{% static card_data.path_child_photo %}" alt="photo"></a>
-                        <div class="carousel-caption">
-                            <h3>{{card_data.child_name}}</h3>
+        {% if cards_data.count != 0 %}
+            <div id="carousel" class="carousel slide mw-100" data-ride="carousel">
+                <a id="add_card" href="{% url 'main:create_card_form' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                <div class="carousel-inner">
+                    {% for card_data in  cards_data%}
+                        <div class="carousel-item">
+                            <a href="#"><img class="img-fluid photo" src="{% static card_data.path_child_photo %}" alt="photo"></a>
+                            <div class="carousel-caption">
+                                <h3>{{card_data.child_name}}</h3>
+                            </div>
                         </div>
-                    </div>
-                {% endfor %}
+                    {% endfor %}
+                </div>
+                {% if cards_data.count != 1 %}
+                    <!-- Элементы управления -->
+                    <a class="fa fa-arrow-circle-left carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Предыдущий</span>
+                    </a>
+                    <a class="fa fa-arrow-circle-right carousel-control-next" href="#carousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Следующий</span>
+                    </a>
+                {% endif %}
+                <!-- Индикаторы -->
+                <ol class="carousel-indicators">
+                    {% for i in indexes %}
+                        <li data-target="#carousel" data-slide-to="{{i}}" class="indicators"></li>
+                    {% endfor %}
+                </ol>
             </div>
-          <!-- Элементы управления -->
-            <a class="fa fa-arrow-circle-left carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Предыдущий</span>
-            </a>
-            <a class="fa fa-arrow-circle-right carousel-control-next" href="#carousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Следующий</span>
-            </a>
-
-          <!-- Индикаторы -->
-            <ol class="carousel-indicators">
-                {% for i in indexs %}
-                    <li data-target="#carousel" data-slide-to="{{i}}" class="indicators"></li>
-                {% endfor %}
-            </ol>
-        </div>
+        {% else %}
+            <div id="bth-create-card">
+                <a href="{% url 'main:create_card_form' %}">Создать</a>
+            </div>
+        {% endif %}
     </div>
 
     <script>
