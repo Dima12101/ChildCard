@@ -11,7 +11,7 @@ from .models import Card
 
 from PIL import Image
 
-ROOT_STATIC_APP = f'{settings.PROJECT_ROOT}\\static\\main'
+ROOT_STATIC_APP = f'{settings.PROJECT_ROOT}/static/main'
 
 
 @login_required
@@ -39,19 +39,19 @@ def create_card_complete(request):
     stream = io.BytesIO(request.FILES['photo'].read())
     photo = Image.open(stream)
 
-    src_rel = f'image\\child_photo\\user_{request.user.username}'
-    src_abs = f'{ROOT_STATIC_APP}\\{src_rel}'
+    src_rel = f'image/child_photo/user_{request.user.username}'
+    src_abs = f'{ROOT_STATIC_APP}/{src_rel}'
 
-    if f'user_{request.user.username}' not in os.listdir(f'{ROOT_STATIC_APP}\\image\\child_photo'):
+    if f'user_{request.user.username}' not in os.listdir(f'{ROOT_STATIC_APP}/image/child_photo'):
         os.mkdir(src_abs)
 
     photo = photo.resize((1200, 800))
-    photo.save(f'{src_abs}\\{photo_name}')
+    photo.save(f'{src_abs}/{photo_name}')
 
     child_card = Card(
         child_name=request.POST['childname'],
         creator_id=request.user,
-        path_child_photo=f'main\\{src_rel}\\{photo_name}',
+        path_child_photo=f'main/{src_rel}/{photo_name}',
     )
     child_card.save()
 
