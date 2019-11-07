@@ -181,8 +181,6 @@ SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.debug.debug'
 )
 
-django_heroku.settings(locals())
-
 
 DATABASES = {
     'default': {
