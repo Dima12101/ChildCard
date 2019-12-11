@@ -16,9 +16,6 @@ ROOT_STATIC_APP = f'{settings.PROJECT_ROOT}/static/main'
 
 @login_required
 def index(request):
-    # request.user.is_authenticated
-    # card = Card(child_name='Артём', creator_id=request.user, date=timezone.now())
-    # card.save()
     cards_data = Card.objects.filter(creator_id=request.user)
     indexes = range(len(cards_data))
     return render(request, 'main/index.html', {'cards_data': cards_data, 'indexes': indexes})
@@ -59,8 +56,8 @@ def create_card_complete(request):
 
 
 @login_required
-def info(request):
-    return render(request, 'main/info.html')
+def about(request):
+    return render(request, 'main/about.html')
 
 
 @login_required

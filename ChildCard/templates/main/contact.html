@@ -1,10 +1,28 @@
 {% extends 'base.html' %}
-
+{% load staticfiles %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'main/css/info.css' %}" type="text/css">
+{% endblock %}
 {% block content %}
-    <h1>КОНТАКТЫ</h1>
+
+	<div class="info-block">
+    	<h1>КОНТАКТЫ</h1>
+        <p>
+            Студент <i>Санкт-Петербургского государственного университета</i> факультета <i>"Прикладная математика и процессы управления"</i> направления <i>"Программирование и информационные технологии"</i>.
+            <br/>
+            Со мной можно связаться в следующих соц.сетях:
+            <ul>
+                <li><i>Вконтакте</i>: id134759185</li>
+                <li><i>Телеграм</i>: @Dima12101</li>
+            </ul>
+        </p>
+	</div>
+
+
     <script>
         $("#li_main").removeClass("current");
-        $("#li_info").removeClass("current");
-        $("#li_contact").addClass("current");
+        $("#li_contact").removeClass("current");
+        $("#li_info").addClass("current");
     </script>
 {% endblock %}
+
