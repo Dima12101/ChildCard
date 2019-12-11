@@ -23,6 +23,8 @@ if os.path.exists(os.path.join(BASE_DIR, '.env')):
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+SECRET_KEY = os.environ['SECRET_KEY']
+
 ALLOWED_HOSTS = ['*']
 
 # Application definition
@@ -197,7 +199,7 @@ SOCIAL_AUTH_YANDEX_OAUTH2_SECRET = os.environ['YANDEX_SECRET']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'Core-Sample-Analysis-db-dev',
+        'NAME': 'ChildCard-db',
         'USER': os.environ['DATABASE_USER'],
         'PASSWORD': os.environ['DATABASE_PASSWORD'],
         'HOST': '46.149.233.52',
