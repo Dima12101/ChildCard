@@ -108,4 +108,5 @@ venv.bak/
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
 
+.idea
 .env
