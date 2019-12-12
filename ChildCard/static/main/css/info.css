@@ -12,11 +12,17 @@
     margin-right: auto;
 }
 
+.info-block #content-scroll
+{
+	overflow: auto;
+	height: 50vh;
+}
+
 @media (max-width: 350px) {
    .info-block
     {
         width: 100%;
-        height: 100%;
+        height: 40%;
     }
 }
 
