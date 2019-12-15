@@ -46,7 +46,7 @@ THIRD_PARTY_APPS = (
 )
 
 LOCAL_APPS = (
-    'accounts.apps.AccountsConfig',
+    'accounts',
     'main'
 )
 
@@ -66,6 +66,7 @@ AUTHENTICATION_BACKENDS = (
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -128,10 +129,10 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
-STATICFILES_DIRS = [
-    os.path.join(PROJECT_ROOT, 'static'),
-]
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+# STATICFILES_DIRS = [
+#     os.path.join(PROJECT_ROOT, 'static'),
+# ]
 
 STATICFILES_FINDERS = (
      "django.contrib.staticfiles.finders.FileSystemFinder",
