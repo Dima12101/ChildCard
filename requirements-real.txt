@@ -2,7 +2,6 @@ acme==1.0.0
 argh==0.26.2
 asn1crypto==1.2.0
 beautifulsoup4==4.8.0
-botocore==1.12.238
 bs4==0.0.1
 cement==2.8.2
 certbot==0.39.0
