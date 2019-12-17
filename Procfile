@@ -1,2 +1,2 @@
-release: python ftp_load_images.py
+release: python manage.py migrate
 web: gunicorn ChildCard.wsgi --log-file -
