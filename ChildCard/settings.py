@@ -25,7 +25,7 @@ DEBUG = True
 
 SECRET_KEY = os.environ['SECRET_KEY']
 
-ALLOWED_HOSTS = ['child-card.herokuapp.com']
+ALLOWED_HOSTS = ['child-card.herokuapp.com', '127.0.0.1']
 
 # Application definition
 DJANGO_APPS = (

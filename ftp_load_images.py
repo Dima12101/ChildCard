@@ -25,7 +25,7 @@ def main():
 
 	print(ftp.retrlines('LIST'))
 
-	download_file('cock_morning.jpg', './cock_morning.jpg')
+	download_file('cock_morning.jpg', './ChildCard/static/main/image/child_photo/user_dima12101/cock_morning.jpg')
 
 	print(os.listdir('./'))
 
