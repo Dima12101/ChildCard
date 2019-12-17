@@ -28,5 +28,6 @@ for user_name in ftp.nlst():
 	ftp.cwd('..')
 print('> Success!')
 
+ftp.close()
 
 open('is_load.', 'w').close()
