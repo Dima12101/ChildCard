@@ -21,7 +21,7 @@ ftp.cwd('ChildCard_images')
 print('> Loading...')
 for user_name in ftp.nlst():
 	if not os.path.exists(f'{BASE_DIR_CLIENT}/{user_name}'):
-		os.mkdir(f'{BASE_DIR_CLIENT}/{user_name}')
+		os.makedirs(f'{BASE_DIR_CLIENT}/{user_name}')
 	ftp.cwd(user_name)
 	for image_name in ftp.nlst():
 		download_file(image_name, f'{BASE_DIR_CLIENT}/{user_name}/{image_name}')
