@@ -56,7 +56,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 SITE_ID = 2
 
 AUTHENTICATION_BACKENDS = (
-    'social.backends.facebook.FacebookOAuth2',
+    # 'social.backends.facebook.FacebookOAuth2',
     'social.backends.google.GoogleOAuth2',
     'social.backends.twitter.TwitterOAuth',
     'social_core.backends.vk.VKOAuth2',
@@ -146,7 +146,7 @@ LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_URL = 'logout'
 LOGOUT_REDIRECT_URL = 'login'
-LOGIN_ERROR_URL = 'login'
+# LOGIN_ERROR_URL = 'login'
 
 ACCOUNT_ACTIVATION_DAYS = 7  # One-week activation window
 
@@ -162,31 +162,46 @@ EMAIL_USE_TLS = True
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
-# SOCIAL_AUTH_PIPELINE = (
-#     'social_core.pipeline.social_auth.social_details',
-#     'social_core.pipeline.social_auth.social_uid',
-#     'social_core.pipeline.social_auth.auth_allowed',
-#     'social_core.pipeline.social_auth.social_user',
-#     'common.pipeline.require_email',
-#     'common.pipeline.require_country',
-#     'common.pipeline.require_city',
-#     'social_core.pipeline.user.get_username',
-#     'social_core.pipeline.mail.mail_validation',
-#     'social_core.pipeline.user.create_user',
-#     'social_core.pipeline.social_auth.associate_user',
-#     'social_core.pipeline.debug.debug',
-#     'social_core.pipeline.social_auth.load_extra_data',
-#     'social_core.pipeline.user.user_details',
-#     'social_core.pipeline.debug.debug'
-# )
+SOCIAL_AUTH_PIPELINE = (
+    # Get the information we can about the user and return it in a simple
+    # format to create the user instance later. On some cases the details are
+    # already part of the auth response from the provider, but sometimes this
+    # could hit a provider API.
+    'social_core.pipeline.social_auth.social_details',
+    # Get the social uid from whichever service we're authing thru. The uid is
+    # the unique identifier of the given user in the provider.
+    'social_core.pipeline.social_auth.social_uid',
+    # Verifies that the current auth process is valid within the current
+    # project, this is where emails and domains whitelists are applied (if
+    # defined).
+    'social_core.pipeline.social_auth.auth_allowed',
+    # Checks if the current social-account is already associated in the site.
+    'social_core.pipeline.social_auth.social_user',
+    # Make up a username for this person, appends a random string at the end if
+    # there's any collision.
+    'social_core.pipeline.user.get_username',
+    # Send a validation email to the user to verify its email address.
+    'social_core.pipeline.mail.mail_validation',
+    # Create a user account if we haven't found one yet.
+    'social_core.pipeline.user.create_user',
+    # Create the record that associates the social account with the user.
+    'social_core.pipeline.social_auth.associate_user',
+    'social_core.pipeline.debug.debug',
+    # Populate the extra_data field in the social record with the values
+    # specified by settings (and the default ones like access_token, etc).
+    'social_core.pipeline.social_auth.load_extra_data',
+    # Update the user record with any changed info from the auth service.
+    'social_core.pipeline.user.user_details',
+    'social_core.pipeline.debug.debug'
+)
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.environ['GOOGLE_KEY']
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.environ['GOOGLE_SECRET']
-#SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = ['email']
+SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = ['email']
 
-SOCIAL_AUTH_FACEBOOK_KEY = os.environ['FACEBOOK_KEY']
-SOCIAL_AUTH_FACEBOOK_SECRET = os.environ['FACEBOOK_SECRET']
-# #SOCIAL_AUTH_FACEBOOK_OAUTH2_SCOPE = ['email']
+# SOCIAL_AUTH_FACEBOOK_KEY = os.environ['FACEBOOK_KEY']
+# SOCIAL_AUTH_FACEBOOK_SECRET = os.environ['FACEBOOK_SECRET']
+#SOCIAL_AUTH_FACEBOOK_OAUTH2_SCOPE = ['email']
 
 SOCIAL_AUTH_VK_OAUTH2_KEY = os.environ['VK_KEY']
 SOCIAL_AUTH_VK_OAUTH2_SECRET = os.environ['VK_SECRET']
@@ -194,6 +209,7 @@ SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['email']
 
 SOCIAL_AUTH_INSTAGRAM_KEY = os.environ['INSTAGRAM_KEY']
 SOCIAL_AUTH_INSTAGRAM_SECRET = os.environ['INSTAGRAM_SECRET']
+SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['email']
 
 SOCIAL_AUTH_YANDEX_OAUTH2_KEY = os.environ['YANDEX_KEY']
 SOCIAL_AUTH_YANDEX_OAUTH2_SECRET = os.environ['YANDEX_SECRET']
