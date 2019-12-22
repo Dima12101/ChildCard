@@ -1,0 +1,101 @@
+.setting-block
+{
+    background-color:#fff;
+    padding: 1% 2%;
+    -webkit-box-shadow:0 0 50px 50px rgb(255,255,255);
+    box-shadow:0 0 50px 50px rgb(255,255,255);
+    border-radius:5px;
+    width: 70%;
+    height: 40%;
+    margin-top: 4%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.setting-block .content-scroll
+{
+	overflow: auto;
+	height: 50vh;
+}
+
+@media (max-width: 350px) {
+   .setting-block
+    {
+        width: 100%;
+        height: 40%;
+    }
+}
+
+.setting-block h1
+{
+    font-family:Open Sans,sans-serif;
+    font-size:22px;
+    color:#24727b;
+    text-align:center;
+    letter-spacing:1px;
+    margin-bottom:20px;
+    margin-top:2px
+}
+
+.setting-block h5 {
+    color:#24727b;
+}
+
+.setting-block li
+{
+    list-style-type: none;
+}
+
+/*#div_id_cards*/
+/*{*/
+/*    overflow: auto;*/
+/*    height: 10vh;*/
+/*}*/
+
+#div_id_cards input
+{
+    display: inline;
+    width: 13px;
+    height: 13px;
+    position: fixed;
+    right: 55%;
+}
+
+.div_card {
+    display: flex;
+    flex-direction: row;
+}
+
+.div_card img{
+     width: 30px;
+     height: 30px;
+}
+
+.div_card input:checked
+{
+    box-shadow:0 0 2px 2px red;
+}
+
+.div_card input:checked ~ label
+{
+    color: red;
+}
+
+
+.div_card label:hover
+{
+    color: red;
+}
+
+/*.div_card:has(input:checked)*/
+/*{*/
+/*    color: red*/
+/*}*/
+
+.setting-block .fa
+{
+    width: 29px;
+    font-size: 30px;
+    color: #24727b;
+}
+

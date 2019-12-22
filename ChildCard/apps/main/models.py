@@ -1,8 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
+import uuid
 
 
 class Card(models.Model):
+    global_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     child_name = models.CharField(verbose_name='имя ребёнка', max_length=50)
     path_child_photo = models.FilePathField(verbose_name='путь к фото', default=None, blank=True, null=True)
     creator_id = models.ForeignKey(User, verbose_name='создатель карточки', on_delete=models.CASCADE)

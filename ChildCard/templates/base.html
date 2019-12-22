@@ -64,7 +64,7 @@
                   {% endif %}
               </span>
               <ul class="submenu">
-                <li><span class="label"><i class="fa fa-user"></i></span><a href="">Настройки</a></li>
+                <li><span class="label"><i class="fa fa-user"></i></span><a href="{% url 'main:setting_account_form' %}">Настройки</a></li>
                 <li><span class="label"><i class="fa fa-sign-out"></i></span><a href="{% url 'logout'%}?next={{request.path}}">Выйти</a></li>
               </ul>
             </li>
