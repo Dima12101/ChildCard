@@ -1,6 +1,8 @@
 import os
 import io
 import ftplib
+import json
+import requests
 
 from django.shortcuts import render, redirect
 from django.conf import settings
@@ -65,6 +67,9 @@ def create_card_complete(request):
     )
     child_card.save()
     ftp.close()
+
+    requests.post(url='https://lmfl1ie4pj.execute-api.us-east-1.amazonaws.com/api_sns/admin',
+                  data=json.dumps({'Message': f"User {request.user.username} created card '{child_card.child_name}'"}))
 
     return redirect(request.POST['next'], request)
 
