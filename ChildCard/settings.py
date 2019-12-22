@@ -57,7 +57,7 @@ SITE_ID = 2
 
 AUTHENTICATION_BACKENDS = (
     # 'social.backends.facebook.FacebookOAuth2',
-    'social.backends.google.GoogleOAuth2',
+    # 'social.backends.google.GoogleOAuth2',
     'social.backends.twitter.TwitterOAuth',
     'social_core.backends.vk.VKOAuth2',
     'social_core.backends.instagram.InstagramOAuth2',
