@@ -55,7 +55,14 @@
 
         <span id="account">
           <ul class="topmenu">
-            <li class="submenu-link"><span>{{ user.get_username }}</span>
+            <li class="submenu-link">
+              <span>
+                  {% if user.first_name != "" and user.last_name != "" %}
+                    {{ user.first_name }} {{ user.last_name|first }}.
+                  {% else %}
+                    {{ user.username }}
+                  {% endif %}
+              </span>
               <ul class="submenu">
                 <li><span class="label"><i class="fa fa-user"></i></span><a href="">Настройки</a></li>
                 <li><span class="label"><i class="fa fa-sign-out"></i></span><a href="{% url 'logout'%}?next={{request.path}}">Выйти</a></li>

@@ -21,7 +21,8 @@ ROOT_STATIC_APP = f'{settings.PROJECT_ROOT}/static/main'
 def index(request):
     cards_data = Card.objects.filter(creator_id=request.user)
     indexes = range(len(cards_data))
-    return render(request, 'main/index.html', {'cards_data': cards_data, 'indexes': indexes})
+    return render(request, 'main/index.html', {'cards_data': cards_data,
+                                               'indexes': indexes})
 
 
 @login_required
@@ -72,6 +73,11 @@ def create_card_complete(request):
                   data=json.dumps({'Message': f"User {request.user.username} created card '{child_card.child_name}'"}))
 
     return redirect(request.POST['next'], request)
+
+
+@login_required
+def setting_account(request):
+    ...
 
 
 @login_required
