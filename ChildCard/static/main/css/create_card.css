@@ -24,6 +24,11 @@
     box-shadow: 0 0 10px 2px #24727b!important;
 }
 
+.create-block label
+{
+    margin-right: 2%;
+}
+
 @media (max-width: 350px) {
    .create-block
     {
