@@ -1,0 +1,121 @@
+/*плавная загрузка страниц*/
+@-webkit-keyframes fade-in {   0% { opacity: 0.1; }   100% { opacity: 1; }   }
+@-moz-keyframes    fade-in {   0% { opacity: 0.1; }   100% { opacity: 1; }   }
+@-o-keyframes      fade-in {   0% { opacity: 0.1; }   100% { opacity: 1; }   }
+@keyframes         fade-in {   0% { opacity: 0.1; }   100% { opacity: 1; }   }
+
+.view-block {
+  -webkit-animation: fade-in 1s linear; /* Safari 4+ */
+  -moz-animation: fade-in 1s linear; /* Fx 5+ */
+  -o-animation: fade-in 1s linear; /* Opera 12+ */
+  animation: fade-in 1s linear; /* IE 10+, Fx 29+ */
+}
+
+.view-block
+{
+    background-color:#fff;
+    padding: 1% 2%;
+    -webkit-box-shadow:0 0 50px 50px rgb(255,255,255);
+    box-shadow:0 0 50px 50px rgb(255,255,255);
+    text-align:center;
+    border-radius:5px;
+    width: 100%;
+    height: 100%;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 350px) {
+   .view-block
+    {
+        width: 100%;
+       height: 100%;
+    }
+}
+
+.view-block h1
+{
+    font-family:Open Sans,sans-serif;
+    color:#24727b;
+    letter-spacing:1px;
+    font-size:22px;
+    margin-bottom:20px;
+    margin-top:2px
+}
+
+.view-block .grid-container {
+    display: grid;
+}
+
+.view-block .view_head {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2%;
+}
+
+.view-block .disable
+{
+    display: none;
+}
+
+.view-block .view_content
+{
+    border-color: black;
+    background-color: #2e969f;
+    box-shadow: 0 0 50px 10px #24727b;
+}
+
+.view_content .name_view
+{
+    background-color: #24727b;
+    color: white;
+    width: 100%;
+    font-size: 20px;
+    margin-bottom: 1%;
+}
+
+.view_content .data_view
+{
+    display: flex;
+    flex-direction: row;
+    height: 35vh;
+}
+
+.view_content .table-div {
+    overflow: auto;
+    width: 48%;
+    margin-right: 2%;
+}
+
+.view_content .chart-div {
+    margin-left: 2%;
+    width: 48%;
+}
+
+.chart-div img {width: 100%; height: 100%}
+
+.view-block .btn-block
+{
+    width: 21%;
+    min-width: fit-content;
+    height: 2%;
+    background:#24727b;
+    border-color:#24727b;
+    border-width: 2px;
+    color: white;
+    margin: auto 2%;
+}
+
+.view-block .btn-block:active, .view-block .btn-block:focus, .view-block .btn-block:hover
+{
+    color:#fff;
+    background-color: #258089;
+    border-color: #258089;
+    box-shadow: 0 0 10px 2px #24727b!important;
+}
+
+/* Таблица с рамкой */
+table.data {border-collapse : collapse; empty-cells: hide; background-color: white; margin: 0; width: 100%}
+table.data th, table.data .thead {font-weight: bold;color: #fff;background-color: #24727b;}
+table.data td, table.data th {border: 1px solid #24727b;padding: 4px;}

@@ -38,6 +38,7 @@ def create_card_complete(request):
 
     child_card = Card(
         child_name=request.POST['childname'],
+        gender=int(request.POST['gender']),
         creator_id=request.user
     )
     child_card.save()
@@ -114,6 +115,15 @@ def setting_account_complete(request):
     for card_id in cards_id:
         delete_card(card_id)
     return redirect(request.POST['next'], request)
+
+
+@login_required
+def view_card(request):
+    card = Card.objects.get(global_id=request.GET['card_id'])
+    boy, girl = Card.BOY, Card.GIRL
+    return render(request, 'main/view_card.html', {'card': card,
+                                                   'boy': boy,
+                                                   'girl': girl})
 
 
 @login_required
