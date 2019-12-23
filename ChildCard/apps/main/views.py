@@ -88,6 +88,7 @@ def setting_account_form(request):
 
 def delete_card(card_id):
     card = Card.objects.get(global_id=card_id)
+    card_name = card.child_name
     src_abs = f'{ROOT_STATIC_APP}/{card.path_child_photo}'
     os.remove(src_abs)
 
@@ -103,6 +104,8 @@ def delete_card(card_id):
 
     card.delete()
 
+    return card_name
+
 
 @login_required
 def setting_account_complete(request):
@@ -112,8 +115,13 @@ def setting_account_complete(request):
     user.save()
 
     cards_id = request.POST.getlist('cards[]')
+    cards = ""
     for card_id in cards_id:
-        delete_card(card_id)
+        card_name = delete_card(card_id)
+        cards += f" '{card_name}',"
+
+    requests.post(url='https://lmfl1ie4pj.execute-api.us-east-1.amazonaws.com/api_sns/admin',
+                  data=json.dumps({'Message': f"User {request.user.username} deleted cards [{cards[:-1]} ]"}))
     return redirect(request.POST['next'], request)
 
 
