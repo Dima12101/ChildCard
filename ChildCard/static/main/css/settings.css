@@ -99,3 +99,22 @@
     color: #24727b;
 }
 
+.setting-block .btn-block
+{
+    width: 100%;
+    min-width: fit-content;
+    height: 2%;
+    background:#24727b;
+    border-color:#24727b;
+    border-width: 2px;
+    color: white;
+}
+
+.setting-block .btn-block:active, .setting-block .btn-block:focus, .setting-block .btn-block:hover
+{
+    color:#fff;
+    background-color: #258089;
+    border-color: #258089;
+    box-shadow: 0 0 10px 2px #24727b!important;
+}
+

@@ -34,10 +34,34 @@
     }
 }
 
+.title
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.title #card_photo
+{
+    width: 4%;
+    height: 4%;
+    margin-right: 2px;
+}
+
+.title a
+{
+    margin-left: auto;
+}
+
+.title a .fa{
+    font-size: 30px;
+    color: #24727b;
+}
+
 .view-block h1
 {
     font-family:Open Sans,sans-serif;
     color:#24727b;
+    text-align: center;
     letter-spacing:1px;
     font-size:22px;
     margin-bottom:20px;
@@ -93,7 +117,13 @@
     width: 48%;
 }
 
-.chart-div img {width: 100%; height: 100%}
+.chart-div img {width: 100%; height: 100%;}
+
+.chart-div
+{
+    background-color: white;
+    padding: 2px;
+}
 
 .view-block .btn-block
 {

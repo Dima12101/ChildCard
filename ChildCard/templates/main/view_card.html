@@ -6,7 +6,12 @@
 {% block content %}
 
 	<div class="view-block">
-    	<h1>Карточка '{{ card.child_name }}'</h1>
+        <div class="title">
+            <img id="card_photo" src="{% static card.path_child_photo %}" alt="card photo">
+            <h1>Карточка '{{ card.child_name }}'</h1>
+            <a href="#"><i class="fa fa-cog"></i></a>
+        </div>
+
         <div class="grid-container">
             <div class="view_head">
                 <button onclick="switch_view(this.value)" class="btn-block" value="circleChest_view">Окружность груди</button>
@@ -122,7 +127,7 @@
                         </div>
                     {% endif %}
                     <div class="chart-div">
-                        <img src="{% static card.path_child_photo %}" alt="photo">
+                        <img src="{% static 'main/image/chart.png' %}" alt="photo">
                     </div>
                 </div>
 
@@ -210,7 +215,7 @@
                         </div>
                     {% endif %}
                     <div class="chart-div">
-                        <img src="{% static card.path_child_photo %}" alt="photo">
+                        <img src="{% static 'main/image/chart.png' %}" alt="photo">
                     </div>
                 </div>
             </div>
@@ -321,7 +326,7 @@
                         </div>
                     {% endif %}
                     <div class="chart-div">
-                        <img src="{% static card.path_child_photo %}" alt="photo">
+                        <img src="{% static 'main/image/chart.png' %}" alt="photo">
                     </div>
                 </div>
             </div>
@@ -432,7 +437,7 @@
                         </div>
                     {% endif %}
                     <div class="chart-div">
-                        <img src="{% static card.path_child_photo %}" alt="photo">
+                        <img src="{% static 'main/image/chart.png' %}" alt="photo">
                     </div>
                 </div>
             </div>
