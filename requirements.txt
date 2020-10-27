@@ -15,7 +15,7 @@ colorama==0.3.9
 ConfigArgParse==0.14.0
 configobj==5.0.6
 confusable-homoglyphs==3.2.0
-cryptography==2.7
+cryptography==3.2
 defusedxml==0.6.0
 distro==1.4.0
 dj-database-url==0.5.0
