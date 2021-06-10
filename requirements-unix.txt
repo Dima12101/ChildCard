@@ -16,7 +16,7 @@ confusable-homoglyphs==3.2.0
 cryptography==2.7
 defusedxml==0.6.0
 distro==1.4.0
-Django==2.2.8
+Django==2.2.24
 django-crispy-forms==1.7.2
 django-registration==3.0.1
 docutils==0.15.2
